@@ -19,3 +19,6 @@ def help(update, context):
         /deploy -> Deploy your project
         '''
     )
+
+def beginner(update, context):
+    update.message.reply_text('Svelte is a javascript framework.')
