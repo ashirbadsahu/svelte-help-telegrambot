@@ -22,3 +22,6 @@ def help(update, context):
 
 def beginner(update, context):
     update.message.reply_text('Svelte is a javascript framework.')
+
+def uilib(update, context):
+    update.message.reply_text('There are several UI Libraries for svelte.')
