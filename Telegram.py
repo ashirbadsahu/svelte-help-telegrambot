@@ -24,7 +24,7 @@ def beginner(update, context):
     update.message.reply_text('Svelte is a javascript framework.')
 
 def uilib(update, context):
-    update.message.reply_text('There are several UI Libraries for svelte.')
+    update.message.reply_text('There are several UI Libraries for svelte. Most of these libries use tailwindcss so you should be fimilar with it.')
 
 def channels(update, context):
     update.message.reply_text('These are some useful channels- ')
