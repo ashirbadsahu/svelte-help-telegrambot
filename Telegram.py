@@ -25,3 +25,9 @@ def beginner(update, context):
 
 def uilib(update, context):
     update.message.reply_text('There are several UI Libraries for svelte.')
+
+def channels(update, context):
+    update.message.reply_text('These are some useful channels- ')
+
+def deploy(update, context):
+    update.message.reply_text('There are various methods to deploy your projects. These are the useful ones- ')
