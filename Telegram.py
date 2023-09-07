@@ -1,4 +1,5 @@
 import telegram.ext
+import requests
 
 Token = "YOUR_TELEGRAM_BOT_TOKEN"
 
@@ -17,6 +18,7 @@ def help(update, context):
         /uilib -> UI libraries for svelte
         /channels -> Useful Youtube channels related on svelte
         /deploy -> Deploy your project
+        /whatis -> Get information about a Svelte feature
         '''
     )
 
@@ -31,3 +33,14 @@ def channels(update, context):
 
 def deploy(update, context):
     update.message.reply_text('There are various methods to deploy your projects. These are the useful ones- ')
+
+def whatis(update, context):
+    if len(context.args) == 0:
+        update.message.reply_text('Please provide a feature name to search for.')
+    else:
+        feature_name = ' '.join(context.args)
+        response = requests.get(f'https://svelte.dev/docs#{feature_name}')
+        if response.status_code == 200:
+            update.message.reply_text(response.url)
+        else:
+            update.message.reply_text(f'Could not find information about {feature_name} in Svelte docs.')
