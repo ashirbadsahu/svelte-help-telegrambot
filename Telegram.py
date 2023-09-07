@@ -39,7 +39,7 @@ def whatis(update, context):
         update.message.reply_text('Please provide a feature name to search for.')
     else:
         feature_name = ' '.join(context.args)
-        response = requests.get(f'https://svelte.dev/docs#{feature_name}')
+        response = requests.get(f'https://svelte.dev/docs/{feature_name}')
         if response.status_code == 200:
             update.message.reply_text(response.url)
         else:
