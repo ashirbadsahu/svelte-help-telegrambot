@@ -1,8 +1,9 @@
 import telegram.ext
+from dotenv import Token
 
-Token = "6466483620:AAEKWIsizoVuayz7rprof04uT0LdbaNdv7w"
+Token()
 
-updater = telegram.ext.updater('6466483620:AAEKWIsizoVuayz7rprof04uT0LdbaNdv7w', useContext = True)
+updater = telegram.ext.updater(Token, useContext = True)
 dispatcher = updater.dispatcher
 
 def start(update, context):
