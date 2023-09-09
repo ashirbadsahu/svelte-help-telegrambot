@@ -1,9 +1,10 @@
 import telegram.ext
 import requests
+from dotenv import Token
 
-Token = "YOUR_TELEGRAM_BOT_TOKEN"
+Token()
 
-updater = telegram.ext.updater(Token, useContext=True)
+updater = telegram.ext.updater(Token, useContext = True)
 dispatcher = updater.dispatcher
 
 def start(update, context):
