@@ -1,9 +1,9 @@
 import telegram.ext
-from dotenv import Token
+from dotenv import Token_id
 
-Token()
+Token_id()
 
-updater = telegram.ext.updater(Token, useContext = True)
+updater = telegram.ext.updater(Token_id, useContext = True)
 dispatcher = updater.dispatcher
 
 def start(update, context):
@@ -32,3 +32,13 @@ def channels(update, context):
 
 def deploy(update, context):
     update.message.reply_text('There are various methods to deploy your projects. These are the useful ones- ')
+
+dispatcher.add_handler(telegram.ext.CommandHandler('start', start))
+dispatcher.add_handler(telegram.ext.CommandHandler('help', help))
+dispatcher.add_handler(telegram.ext.CommandHandler('beginner', beginner))
+dispatcher.add_handler(telegram.ext.CommandHandler('uilib', uilib))
+dispatcher.add_handler(telegram.ext.CommandHandler('channels', channels))
+dispatcher.add_handler(telegram.ext.CommandHandler('deploy', deploy))
+
+updater.start_polling()
+updater.idle()
