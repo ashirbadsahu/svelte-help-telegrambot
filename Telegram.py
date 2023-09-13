@@ -2,13 +2,14 @@ import telegram.ext
 import os
 from dotenv import load_dotenv
 
-# Load your Telegram token from environment variables
+# Load Telegram token from environment variables
 load_dotenv()
 telegram_token = os.getenv("TELEGRAM_TOKEN")
 
 updater = telegram.ext.Updater(token=telegram_token, use_context=True)
 dispatcher = updater.dispatcher
 
+# Commands and their responces
 def start(update, context):
     update.message.reply_text('Hello welcome to Svelte help.')
 
