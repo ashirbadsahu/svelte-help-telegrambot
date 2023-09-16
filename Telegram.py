@@ -35,7 +35,7 @@ def channels(update, context):
     update.message.reply_text('These are some useful channels- Joy of code, huntabyte')
 
 def deploy(update, context):
-    update.message.reply_text('There are various methods to deploy your projects. These are the useful ones- ')
+    update.message.reply_text('There are various methods to deploy your projects. Vercel is best to deploy your site as a beginner')
 
 dispatcher.add_handler(telegram.ext.CommandHandler('start', start))
 dispatcher.add_handler(telegram.ext.CommandHandler('help', help))
